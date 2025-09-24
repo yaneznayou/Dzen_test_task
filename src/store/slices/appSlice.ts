@@ -60,6 +60,10 @@ export const appSlice = createSlice({
     },
     deleteProduct: (state, action: PayloadAction<number>) => {
       state.products = state.products.filter(product => product.id !== action.payload)
+    
+      state.orders.forEach(order => {
+        order.products = order.products.filter(product => product.id !== action.payload)
+      })
     },
     addProduct: (state, action: PayloadAction<Product>) => {
       state.products.push(action.payload)

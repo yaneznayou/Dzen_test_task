@@ -59,7 +59,7 @@ const ProductsList: React.FC = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mr-4">
           <div className="flex flex-col space-y-1">
             <label className="text-sm font-medium text-gray-700">{t('products.type')}:</label>
             <select
