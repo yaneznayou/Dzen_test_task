@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/🚀_Live_Demo-Railway-blueviolet?style=for-the-badge" alt="Live Demo" />
   </a>
   <br>
-  <p><strong>Demo URL:</strong> <a href="https://dzentesttask-production.up.railway.app/orders](https://sincere-magic-production-631e.up.railway.app">Demo</a></p>
+  <p><strong>Demo URL:</strong> <a href="https://sincere-magic-production-631e.up.railway.app/orders">Demo</a></p>
 </div>
 
 ---
