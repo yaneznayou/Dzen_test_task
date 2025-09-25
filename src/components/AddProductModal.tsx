@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const AddProductModal: React.FC = () => {
   const dispatch = useAppDispatch()
-  const { orders, products } = useAppSelector((state) => state.app)
+  const { orders, products, selectedOrder } = useAppSelector((state) => state.app)
   
   const [formData, setFormData] = useState<ProductFormData>({
     title: '',
@@ -24,7 +24,7 @@ const AddProductModal: React.FC = () => {
       { value: 0, symbol: 'USD', isDefault: false },
       { value: 0, symbol: 'UAH', isDefault: true }
     ],
-    order: orders[0]?.id || 1
+    order: selectedOrder?.id || orders[0]?.id || 1
   })
 
   const [errors, setErrors] = useState<Record<string, string>>({})

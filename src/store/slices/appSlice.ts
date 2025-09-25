@@ -65,7 +65,6 @@ export const appSlice = createSlice({
         order.products = order.products.filter(product => product.id !== action.payload)
       })
       
-      // Обновляем selectedOrder если он содержал удаленный товар
       if (state.selectedOrder) {
         state.selectedOrder = {
           ...state.selectedOrder,
@@ -74,7 +73,22 @@ export const appSlice = createSlice({
       }
     },
     addProduct: (state, action: PayloadAction<Product>) => {
-      state.products.push(action.payload)
+      const newProduct = action.payload
+      state.products.push(newProduct)
+
+      if (newProduct.order) {
+        const order = state.orders.find(o => o.id === newProduct.order)
+        if (order) {
+          order.products.push(newProduct)
+        }
+
+        if (state.selectedOrder && state.selectedOrder.id === newProduct.order) {
+          state.selectedOrder = {
+            ...state.selectedOrder,
+            products: [...state.selectedOrder.products, newProduct]
+          }
+        }
+      }
     },
     addExistingProductToOrder: (state, action: PayloadAction<{ productId: number, orderId: number }>) => {
       const { productId, orderId } = action.payload
@@ -84,6 +98,14 @@ export const appSlice = createSlice({
         const order = state.orders.find(o => o.id === orderId)
         if (order) {
           order.products.push(product)
+        }
+        
+
+        if (state.selectedOrder && state.selectedOrder.id === orderId) {
+          state.selectedOrder = {
+            ...state.selectedOrder,
+            products: [...state.selectedOrder.products, product]
+          }
         }
       }
     },
