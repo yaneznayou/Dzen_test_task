@@ -14,7 +14,7 @@
   <p>A full-featured web application for managing orders, products, and product groups with real-time support</p>
   
   <h2>🌐 Live Demo</h2>
-  <a href="https://dzentesttask-production.up.railway.app/orders](https://sincere-magic-production-631e.up.railway.app" target="_blank">
+  <a href="https://sincere-magic-production-631e.up.railway.app/orders" target="_blank">
     <img src="https://img.shields.io/badge/🚀_Live_Demo-Railway-blueviolet?style=for-the-badge" alt="Live Demo" />
   </a>
   <br>
