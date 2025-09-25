@@ -244,7 +244,55 @@ DELETE /api/products/:id   # Delete product
 
 ---
 
-## 🚀 Deployment
+## 🐳 Docker Deployment (Alternative)
+
+The project supports Docker containerization with separate services for frontend and WebSocket server.
+
+### Architecture
+The project is split into two services:
+- **Frontend** (Next.js) - port 3000
+- **WebSocket Server** - port 3001
+
+### Quick Start with Docker
+```bash
+# Build and run both services
+docker-compose up --build
+
+# Or run in background
+docker-compose up -d --build
+```
+
+### Manual Docker Build
+```bash
+# Build frontend
+docker build -f Dockerfile.frontend -t inventory-frontend .
+
+# Build WebSocket server
+docker build -f Dockerfile.websocket -t inventory-websocket .
+
+# Run frontend
+docker run -p 3000:3000 inventory-frontend
+
+# Run WebSocket server (in another terminal)
+docker run -p 3001:3001 inventory-websocket
+```
+
+### Access
+- **Next.js Application**: http://localhost:3000
+- **WebSocket Server**: ws://localhost:3001
+
+### Stop Services
+```bash
+# Stop docker-compose
+docker-compose down
+
+# Stop individual containers
+docker stop <container_id>
+```
+
+---
+
+## 🚀 Traditional Deployment
 
 ### Production Build
 ```bash
