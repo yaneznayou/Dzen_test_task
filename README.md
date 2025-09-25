@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/🚀_Live_Demo-Railway-blueviolet?style=for-the-badge" alt="Live Demo" />
   </a>
   <br>
-  <p><strong>Demo URL:</strong> <a href="https://dzentesttask-production.up.railway.app/orders">https://dzentesttask-production.up.railway.app/orders</a></p>
+  <p><strong>Demo URL:</strong> <a href="https://dzentesttask-production.up.railway.app/orders](https://sincere-magic-production-631e.up.railway.app">Demo</a></p>
 </div>
 
 ---
@@ -326,27 +326,6 @@ NEXT_PUBLIC_WS_URL=http://localhost:3001
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🎯 Future Enhancements
-
-- [ ] **REST API Integration**: Replace mock data with real API calls
-- [ ] **Authentication**: JWT-based user authentication
-- [ ] **Internationalization**: Multi-language support (i18n)
-- [ ] **Unit Tests**: Comprehensive test coverage
-- [ ] **Charts & Analytics**: Data visualization components
-- [ ] **Advanced Filtering**: More filter options and search
-- [ ] **Export Functionality**: PDF/Excel export capabilities
-- [ ] **Real-time Notifications**: Push notifications for updates
-- [ ] **Offline Support**: PWA capabilities
-- [ ] **Performance Optimization**: Code splitting and lazy loading
-
-
----
 
 <div align="center">
   <p><strong>Built with ❤️ using Next.js, TypeScript, and modern web technologies</strong></p>
