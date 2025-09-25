@@ -64,6 +64,14 @@ export const appSlice = createSlice({
       state.orders.forEach(order => {
         order.products = order.products.filter(product => product.id !== action.payload)
       })
+      
+      // Обновляем selectedOrder если он содержал удаленный товар
+      if (state.selectedOrder) {
+        state.selectedOrder = {
+          ...state.selectedOrder,
+          products: state.selectedOrder.products.filter(product => product.id !== action.payload)
+        }
+      }
     },
     addProduct: (state, action: PayloadAction<Product>) => {
       state.products.push(action.payload)

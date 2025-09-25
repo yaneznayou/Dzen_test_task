@@ -2,10 +2,36 @@ const { Server } = require('socket.io')
 const http = require('http')
 
 const server = http.createServer()
+
+// Настройка CORS для локальной разработки и продакшна
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://localhost:3000",
+  // Railway автоматически добавит свои домены через переменные окружения
+]
+
+// Добавляем продакшн URL из переменных окружения
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL)
+}
+
+// Разрешаем все HTTPS домены Railway в продакшне
+const corsOrigin = process.env.NODE_ENV === 'production' 
+  ? (origin, callback) => {
+      // Разрешаем Railway домены и наши указанные домены
+      if (!origin || allowedOrigins.includes(origin) || origin.includes('.railway.app')) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    }
+  : allowedOrigins
+
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"]
+    origin: corsOrigin,
+    methods: ["GET", "POST"],
+    credentials: true
   }
 })
 
